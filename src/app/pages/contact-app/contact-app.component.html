@@ -1,0 +1,7 @@
+<section class="contact-app">
+    <h1>Contacts</h1>
+    <app-contact-filter (onSetFilter)="setFilter($event)"></app-contact-filter>
+    <contact-list [contacts]="contacts">
+
+    </contact-list>
+</section>

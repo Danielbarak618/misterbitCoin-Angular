@@ -1,0 +1,20 @@
+<div class="details-action">
+    <a routerLink="/contact"><img class="details-icon" src="./assets/imgs/back.png"></a>
+    <button (click)="onRemoveContact()" *ngIf="contact._id"> <img class="details-icon"
+            src="./assets/imgs/delete.png"></button>
+</div>
+
+<form (submit)="onSaveContact()" class="contact-edit simple-form" *ngIf="contact;else loader">
+    <label for="name">Name</label>
+    <input type="text" id="name" [(ngModel)]="contact.name" name="name">
+    <label for="email">Email</label>
+    <input type="text" id="email" [(ngModel)]="contact.email" name="email">
+    <label for="phone">Phone Number</label>
+    <input type="text" id="phone" [(ngModel)]="contact.phone" name="phone">
+    <button class="simple-button">Save</button>
+</form>
+
+
+<ng-template #loader>
+    <h3>Loading</h3>
+</ng-template>

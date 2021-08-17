@@ -1,0 +1,19 @@
+<section>
+
+    <div class="details-action">
+        <a routerLink="/contact"><img class="details-icon" src="./assets/imgs/back.png"></a>
+        <a [routerLink]="['/edit',contact._id]">
+            <img class="details-icon" src="./assets/imgs/edit.png">
+        </a>
+    </div>
+    <div class="details">
+        <img src="https://robohash.org/+{{ contact._id }}" />
+        <p>Name:{{contact.name}}</p>
+        <p>Email:{{contact.email}}</p>
+        <p>Phone:{{contact.phone}}</p>
+        <app-transfer-fund [contact]="contact"></app-transfer-fund>
+        <app-move-list [moves]="getMovesToContact()"></app-move-list>
+
+
+    </div>
+</section>
